@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>
+        var array = ["Rojo", "Verde", "Blanco", "Negro"];
+        var color = [];
+        var colormas = [];
+        for($i=0; $i<4;$i++){
+            if($i==3){
+                color = color + (array[$i]);
+                colormas = colormas + (array[$i]);
+            }else{
+                color = color + (array[$i]+", ");
+                colormas = colormas + (array[$i]+" + ");
+            };
+        };
+        console.log(color);
+        console.log(colormas);
+        
+    </script>
+
+
+</body>
+</html>

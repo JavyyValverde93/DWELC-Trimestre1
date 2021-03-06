@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        var nom = prompt("Introduzca su nombre y apellidos: ", "Carlos Duty Black");
+        nom = nom.trim(); //Eliminar espacios delante y detrás
+        let NombreSinEspacios = nom.split(" ");
+        var letras = nom.length - NombreSinEspacios.length + 1;
+        let palabras = NombreSinEspacios.length;
+
+        //console.log(NombreSinEspacios);
+        console.log("Tamaño de nombre y apellidos: " + letras);
+
+        console.log("Nombre en minusculas: " + nom.toLocaleLowerCase());
+        console.log("Nombre en mayusculas: " + nom.toUpperCase());
+
+        var nom1 = "";
+
+        for($i=0; $i<nom.indexOf(" "); $i++){
+            nom1 = nom1+nom[$i];
+        }
+
+        var ape1 = "";
+
+        for($i=nom.indexOf(" ") + 1; $i<nom.lastIndexOf(" "); $i++){
+            ape1 = ape1 + nom[$i];
+        }
+
+        var ape2 = "";
+
+        for($i=nom.lastIndexOf(" ") + 1; $i<nom.length; $i++){
+            ape2 = ape2 + nom[$i];
+        }
+
+        console.log("Nombre: " + nom1);
+        console.log("Apellido 1: " + ape1);
+        console.log("Apellido 2: " + ape2);
+
+        var prop1 = nom1[0] + ape1 + ape2[0];
+        var prop2 = nom1[0] + nom1[1] + nom1[2] + ape1[0].toLocaleLowerCase() + ape1[1] + ape1[2] + ape2[0].toLocaleLowerCase() + ape2[1] + ape2[2];
+
+        console.log("Propuesta nombre usuario: " + prop1.toLocaleLowerCase());
+        console.log("Propuesta 2 nombre usuario: " + prop2);
+
+    </script>
+
+
+</body>
+</html>

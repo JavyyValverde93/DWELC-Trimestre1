@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>
+        var array = ["Sandia", "Melon"]; //Array
+            array.push("Kiwi"); //Añadir kiwi
+            var mitad = array.length/2; //Mitad array
+ 
+        	array.splice(mitad, 1, "Melocoton"); // Cambiar elemento intermedio por Melocoton
+            console.log(array[0]); //Mostrar primer elemento
+            array.shift(); //Eliminar primer elemento(Sandia) array
+            array.unshift("Pera"); //Añadir al principio del array Pera
+            
+            console.log("Vector: "+array); //Mostrar vector
+            console.log("Vector ordenado: "+array.sort()); //Ordenar vector
+
+        
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        class jugador{
+            constructor(nombre1, apellido1, empleo1, nivel1, puntuacion1){
+                let nombre = nombre1;
+                var apellido = apellido1;
+                var empleo = empleo1;
+                var nivel = nivel1;
+                var puntuacion = puntuacion1;
+            }
+            
+            toString(jug){
+                let mensaje = "Nombre: " + jug.nombre + "\nApellido: " + jug.apellido + "\nEmpleo: " + jug.empleo + "\nNivel: " + jug.nivel + "\nPuntuación: " + jug.puntuacion;
+                return mensaje;
+            } 
+            
+        };
+
+        var jugador1 = new jugador();
+        var jugador2 = new jugador();
+
+        jugador1.nombre = 'Charles';
+        jugador1.apellido = 'J1';
+        jugador1.empleo = 'Oficina';
+        jugador1.nivel = 4;
+        jugador1.puntuacion = 999;
+
+        jugador2.nombre = 'Jug2';
+        jugador2.apellido = 'J2';
+        jugador2.empleo = 'Maquinista';
+        jugador2.nivel = 7;
+        jugador2.puntuacion = 19294;
+
+        let jugadores = [jugador1, jugador2];
+
+        /* jugador.prototype.toString = function mostrarJugador(jugador){
+            var datos = "Nombre: " + jugador.nombre + "\nApellido: " + jugador.apellido + "\nEmpleo: " + jugador.empleo + "\nNivel: " + jugador.nivel + "\nPuntuación: " + jugador.puntuacion;
+            return datos;
+        }
+        */
+        resetearPuntuacion = function(jugador) {jugador.puntuacion = 0;};
+
+        //Inicio
+        console.log(jugador1.toString(jugador1));
+        console.log(jugador2.toString(jugador2));
+        resetearPuntuacion(jugador2);
+        console.log(jugador2.toString(jugador2));
+
+
+
+    </script>
+
+
+</body>
+</html>

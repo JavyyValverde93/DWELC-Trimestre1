@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        class Vehiculo {
+          constructor(numRuedas, color, nombre, velocidadMax) {
+            this.numRuedas = numRuedas;
+            this.color = color;
+            this.nombre = nombre;
+            this.velocidadMax = velocidadMax;
+          }
+          toString(auto){
+            let mensaje = "Ruedas: " + auto.numRuedas + "\nColor: " + auto.color + "\nNombre: " + auto.nombre + "\nVelocidad máxima: " + auto.velocidadMax;
+            return mensaje;
+          }
+
+          confNumRuedas(n){
+            this.numRuedas = n;
+          }
+          confColor(n){
+            this.color = n;
+          }
+          confNombre(n){
+            this.nombre = n;
+          }
+          confVelocidadMax(n){
+            this.velocidadMax = n;
+          }
+          
+
+        }
+
+        class Automovil extends Vehiculo{
+          constructor(numRuedas, color, nombre, velocidadMax, numPasajerosTotal, numPasajerosActual){
+            super(numRuedas, color, nombre, velocidadMax);
+            this.numPasajerosTotal = numPasajerosTotal;
+            this.numPasajerosActual = numPasajerosActual;
+          }
+          // toString2(auto){
+          //   let mensaje = auto.toString(auto) + "\nNúmero de pasajeros total: " + auto.numPasajerosTotal + "\nNúmero de pasajeros actual: " + auto.numPasajerosActual;
+          //   return mensaje;
+          // }
+          toString(auto){
+            let mensaje = super.toString(auto) +"\nNúmero de pasajeros total: " + auto.numPasajerosTotal + "\nNúmero de pasajeros actual: " + auto.numPasajerosActual;
+              return mensaje;
+          }
+
+          confNumPasajerosTotal(n){
+            this.numPasajerosTotal = n;
+          }
+          confNumPasajerosActual(n){
+            this.numPasajerosActual = n;
+          }
+
+
+        }
+
+        class Suv extends Automovil{
+          constructor(numRuedas, color, nombre, velocidadMax, numPasajerosTotal, numPasajerosActual, tieneReductora, tiene4x4){
+            super(numRuedas, color, nombre, velocidadMax, numPasajerosTotal, numPasajerosActual);
+            this.tieneReductora = tieneReductora;
+            this.tiene4x4 = tiene4x4;
+          }
+          // toString3(auto){
+          //   let mensaje = auto.toString2(auto) + "\nReductora: " + auto.tieneReductora + "\n4x4: " + auto.tiene4x4;
+          //   return mensaje;
+          // }
+          toString(auto){
+            let mensaje = super.toString(auto) + "\nReductora: " + auto.tieneReductora + "\n4x4: " + auto.tiene4x4;
+              return mensaje;
+          }
+          confTieneReductora(n){
+            this.tieneReductora = n;
+          }
+          confTiene4x4(n){
+            this.tiene4x4 = n;
+          }
+
+          circularXNieve(auto){
+            let mensaje = "Yeah mira como voy por la nieve";
+            return mensaje;
+          }
+          circularXTierra(auto){
+            let mensaje = "Oleh mira como voy por la tierra";
+            return mensaje;
+          }
+          
+        }
+
+        carro = new Vehiculo(4, "verde", "Jaguar", 300);
+        auto = new Automovil(4, 'azul', 'Audi', 250, 7, 3);
+        suv = new Suv(4, "Gris", "Kia", 189, 5, 2, "Sí", "No");
+        ee = Object.values(suv);
+        console.log("Carroooo: "+ee);
+        auto.nombre = "Maserati";
+        
+        suv.confNumRuedas(7);
+        suv.confTiene4x4('Sí');
+        
+        console.log(carro.toString(carro));
+        console.log(auto.toString(auto));
+        console.log(suv.toString(suv));
+
+    </script>
+
+
+</body>
+</html>

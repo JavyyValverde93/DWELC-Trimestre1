@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        var num = 371;
+
+        var d3 = num%10;
+        var d2 = ((num-d3)%100)/10;
+        var d1 = (num-d3-(d2*10))/100;
+
+        console.log("Listado de numeros Amstrong de tres digitos: ");
+        
+        for($i=100; $i<1000; $i++){
+            num = $i;
+            var d3 = num%10;
+            var d2 = ((num-d3)%100)/10;
+            var d1 = (num-d3-(d2*10))/100;
+            var Amstrong = d1*d1*d1 + d2*d2*d2 + d3*d3*d3;
+            if(Amstrong==num){
+                console.log(num);
+            }
+        }
+    </script>
+
+
+</body>
+</html>

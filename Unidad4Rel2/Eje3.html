@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        
+    const iceCreams = [
+    { flavor: 'pineapple', color: 'white' },
+    { flavor: 'strawberry', color: 'red' },
+    { flavor: 'watermelon', color: 'red' },
+    { flavor: 'kiwi', color: 'green' },
+    { flavor: 'mango', color: 'yellow' },
+    { flavor: 'pear', color: 'green' }
+    ];
+
+    //Helados de color rojo
+    rojos = iceCreams.filter(funcioPrueba => funcioPrueba.color === 'red').map(hela => "Flavor: " + hela.flavor + ", Color: " + hela.color);   
+    
+    console.log("Array de helados de color rojo: ", rojos);
+        
+    //Sabores
+    var sabores = [];
+
+    iceCreams.map(function (saboreh){
+        sabores.push(saboreh.flavor);
+        return saboreh.flavor;
+    })
+
+    console.log("Sabores: " + sabores);
+    
+
+    </script>
+
+
+</body>
+</html>

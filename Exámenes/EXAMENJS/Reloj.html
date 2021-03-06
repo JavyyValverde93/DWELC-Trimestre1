@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        var hora = 15;
+        var hora0 = hora;
+        var min = 40;
+        var min0 = min;
+        var seg = 30;
+        var seg0 = seg;
+        var momento = "";
+
+        //var reloj = hora + "-" + min + "-" + seg;
+        
+        function horas(){
+            seg ++;
+            if(seg==60){
+                seg = 0;
+                min ++;
+                if(min==60){
+                    min = 0;
+                }
+            }
+            if(min==60){
+                min = 0;
+                hora ++;
+                if(hora==24){
+                    hora = 0;
+                }
+            }
+            //Horario
+            if(hora>=7 && hora<=11 && min<=60){
+                momento = "Es mañana";
+            }
+            if(hora>=12 && hora<=14 && min<=60){
+                momento = "Es mediodía";
+            }
+            if(hora>=15 && hora<=20 && min<=60){
+                momento = "Estamos en la tarde";
+            }
+            if(hora>=21 && min<=60){
+                momento = "Es de noche";
+            }
+            //Cero delante del número
+            if(hora-10<0){
+                hora0 = "" + 0 + hora;
+            }else{
+                hora0 = hora;
+            }
+            if(min-10<0){
+                min0 = "" + 0 + min;
+            }else{
+                min0 = min;
+            }
+            if(seg-10<0){
+                seg0 = "" + 0 + seg;
+            }else{
+                seg0 = seg;
+            }
+
+            console.log("info = " + momento + ": " + hora0+"-"+min0+"-"+seg0);
+        }
+
+        setInterval(horas, 1000);
+
+    </script>
+
+
+</body>
+</html>

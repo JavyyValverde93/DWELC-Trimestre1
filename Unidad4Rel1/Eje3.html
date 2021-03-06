@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>     
+        class Persona{
+            constructor(id1, Nombre1, Apellidos1, Edad1){
+                let id = id1;
+                let Nombre = Nombre1;
+                let Apellidos = Apellidos1;
+                let Edad = Edad1;
+            }
+            
+            //Configurar
+            confId(newId){
+                this.id = newId;
+            }
+            confNombre(newNombre){
+                this.Nombre = newNombre;
+            }
+            confApellidos(newApellidos){
+                this.Apellidos = newApellidos;
+            }
+            confEdad(newEdad){
+                this.Edad = newEdad;
+            }
+            //Funciones
+            Concentrarse(){
+                let mensaje = "Concentración: activada";
+                return mensaje;
+            }
+            Viajar(){
+                let mensaje = "Planeando viaje...";
+                return mensaje;
+            }
+        }
+
+        class Futbolista extends Persona{
+            constructor(id1, Nombre1, Apellidos1, Edad1, dorsal1, demarcacion1){
+                super(id1, Nombre1, Apellidos1, Edad1);
+                let dorsal = dorsal1;
+                let demarcacion = demarcacion1;
+            }
+
+            confDorsal(newDorsal){
+                this.dorsal = newDorsal;
+            }
+            confDemarcacion(newDemarcacion){
+                this.demarcacion = newDemarcacion
+            }
+
+            jugarPartido(){
+                let mensaje = "Jugador en partido";
+                return mensaje;
+            }
+            entrenar(){
+                let mensaje = "Entrenando...";
+                return mensaje;
+            }
+
+        }
+
+        class Entrenador extends Persona{
+            constructor(id1, Nombre1, Apellidos1, Edad1, dorsal1, demarcacion1, idFederacion1){
+                super(id1, Nombre1, Apellidos1, Edad1);
+                let idFederacion = idFederacion1;
+            }
+
+            confIdFederacion(newIdFederacion){
+                this.idFederacion = newIdFederacion;
+            }
+
+            dirigirPartido(){
+                let mensaje = "Dirigiendo partido";
+                return mensaje;
+            }   
+            dirigirEntrenamiento(){
+                let mensaje = "Dirigiendo entrenamiento";
+                return mensaje;
+            }         
+        }
+
+        class Masajista extends Persona{
+            constructor(id1, Nombre1, Apellidos1, Edad1, Titulacion1, aniosExperiencia1){
+                super(id1, Nombre1, Apellidos1, Edad1);
+                let Titulacion = Titulacion1;
+                let aniosExperiencia = aniosExperiencia1;
+            }
+
+            confTitulacion(newTitulacion){
+                this.Titulacion = newTitulacion;
+            }
+            confAniosExperiencia(newAniosExperiencia){
+                this.aniosExperiencia = newAniosExperiencia;
+            }
+            
+            darMasaje(){
+                let mensaje = "Masajeando...";
+                return mensaje;
+            }
+        }
+
+        //Inicio
+        var j1 = new Futbolista();
+        j1.confId(1234);
+        j1.confNombre("Jaime");
+        j1.confApellidos("Gutiérrez");
+        j1.confEdad(28);
+        j1.confDorsal(7);
+        j1.confDemarcacion(14);
+
+        var trainer1 = new Entrenador();
+        trainer1.confId(13489);
+        trainer1.confEdad(45);
+        trainer1.confNombre("Carlitos");
+        trainer1.confApellidos("Sánchez");
+        trainer1.confIdFederacion(5496);
+
+        var mas1 = new Masajista();
+        mas1.confEdad(39);
+        mas1.confId(6723467);
+        mas1.confNombre("Teodoro");
+        mas1.confApellidos("Rivas");
+        mas1.confTitulacion("Blablacar");
+        mas1.confAniosExperiencia(7);
+            
+        
+        console.log(j1, trainer1, mas1);
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nombre, apellido, edad){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+            }
+
+            toString(){
+                let mens = "Nombre: "+this.nombre+" Apellido: "+this.apellido+" Edad: "+this.edad;
+                return mens;
+            }
+
+            get nombre(){
+                return this._nombre;
+            }
+
+            set nombre(n){
+                this._nombre = n;
+            }
+
+            get apellido(){
+                return this._apellido;
+            }
+
+            set apellido(ap){
+                this._apellido = ap;
+            }
+
+            get edad(){
+                return this._edad;
+            }
+
+            set edad(a){
+                this._edad = a;
+            }
+        }
+
+
+        class Medico extends Persona{
+            constructor(nombre, apellido, edad, especialidad, aniosExper){
+                super(nombre, apellido, edad);
+                this.especialidad = especialidad;
+                this.aniosExper = aniosExper;
+            }
+
+            toString(){
+                let mens = super.toString()+" Especialidad: "+this.especialidad+" Años Experiencia: "+this.aniosExper;
+                return mens;
+            }
+
+            get especialidad(){
+                return this._especialidad;
+            }
+
+            set especialidad(e){
+                if(e==null){
+                    console.log("Error, el campo especialidad no puede estar vacío");
+                }else{
+                    this._especialidad = e;
+                }
+            }
+
+            get aniosExper(){
+                return this._aniosExper;
+            }
+
+            set aniosExper(an){
+                if(!isNaN(an)){
+                    this._aniosExper = an;
+                }else{
+                    console.log("Error, los años de experiencia deben ser numéricos");
+                }
+            }
+
+        }
+
+        medicos = [];
+
+        medico1 = new Medico("Juan", "Martinez", 26, "cardiología", 1);
+        medicos.push(medico1);
+
+        medico2 = new Medico("Ana", "Larra", 32, "infantil", 14);
+        medicos.push(medico2);
+
+        medico3 = new Medico("Fran", "Sanchez", 26, "infantil", 7);
+        medicos.push(medico3);
+
+        //SUMA AÑOS EXPERIENCIA EN INFANTIL
+        let experInfantil = medicos.filter(a=>a.especialidad === "infantil").map(a=>a.aniosExper).reduce((acum, actual)=>acum+actual, 0);
+
+        console.log("Años de experiencia en infantil: "+experInfantil);
+
+        //MÉDICO CON MENOS AÑOS DE EXPERIENCIA
+        menosExper = null;
+        let medMenosExperimentado = medicos.map(function(anio){
+            if(menosExper==null){
+                menosExper = anio.nombre;
+            }else{
+                if(anio.aniosExper<=menosExper){
+                    menosExper = anio.nombre;
+                }
+            }
+        });
+        console.log(medico1.toString());
+        console.log("Médico con menos años de experiencia: "+menosExper);
+
+
+        
+    </script>
+    
+</body>
+</html>

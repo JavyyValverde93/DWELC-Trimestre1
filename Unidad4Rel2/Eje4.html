@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        let pilotos = [
+            {
+                id: 10,
+                name: "Poe Dameron",
+                years: 14,
+            },
+            {
+                id: 2,
+                name: "Temmin 'Snap' Wexley",
+                years: 30,
+            },
+            {
+                id: 41,
+                name: "Tallissan Lintra",
+                years: 16,
+            },
+            {
+                id: 99,
+                name: "Ello Asty",
+                years: 22,
+            }
+        ];
+        
+        //Años totales de experiencia de todos los piotos juntos
+        let total = 0;
+
+        pilotos.map(function (anikos){
+            return total = total + anikos.years;
+        })
+        
+        console.log("Años totales de experiencia: ", total);
+
+        //Años totales de experiencia de todos los piotos juntos con operador arrow =>
+        anios = pilotos.map(anikos=>anikos.years).reduce((acum, actual)=> acum + actual, 0);
+
+        console.log("Años de experiencia: ", anios);
+
+        //Piloto con mas experiencia
+
+        let max = 0;
+        let piloto;
+
+        pilotos.map(function (anikos){
+            if(anikos.years>max){
+                max = anikos.years;
+                piloto = anikos.name;
+            }
+        })
+
+        console.log("El piloto con más años de experiencia es ", piloto, " con ", max, " años de experiencia");
+
+      
+
+        
+
+    </script>
+
+
+</body>
+</html>

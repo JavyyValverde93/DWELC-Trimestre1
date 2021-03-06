@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+        var personnel = [
+            {
+                id: 5,
+                name: "Luke Skywalker",
+                pilotingScore: 98,
+                shootingScore: 56,
+                isForceUser: true,
+            },
+            {
+                id: 82,
+                name: "Sabine Wren",
+                pilotingScore: 73,
+                shootingScore: 99,
+                isForceUser: false,
+            },
+            {
+                id: 22,
+                name: "Zeb Orellios",
+                pilotingScore: 20,
+                shootingScore: 59,
+                isForceUser: false,
+            },
+            {
+                id: 15,
+                name: "Ezra Bridger",
+                pilotingScore: 43,
+                shootingScore: 67,
+                isForceUser: true,
+            },
+            {
+                id: 11,
+                name: "Caleb Dume",
+                pilotingScore: 71,
+                shootingScore: 85,
+                isForceUser: true,
+            },
+        ];
+
+        //Puntuación total
+        var contador = 0;
+
+        personnel.filter(function (per){
+            if(per.isForceUser===true){
+                contador = contador + per.pilotingScore + per.shootingScore;
+            }
+        })
+
+        console.log("Puntuación total: " + contador);
+
+        //Puntuación total con operador arrow =>
+        pp = personnel.filter(per=>per.isForceUser===true).map(pers=>pers.shootingScore + pers.pilotingScore).reduce((acum, actual)=>acum+actual, 0);
+        console.log("Puntuación total: " + pp);
+    </script>
+</body>
+</html>

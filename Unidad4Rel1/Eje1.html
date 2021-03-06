@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        let jugador1 = {
+            nombre : 'Carlos',
+            apellido : 'Gs',
+            empleo : 'Defensa',
+            nivel : 55,
+            puntuacion : 989
+        }
+        let jugador2 = {
+            nombre : 'Vin',
+            apellido : 'Kilo',
+            empleo : 'Ataque',
+            nivel : 255,
+            puntuacion : 3989
+        }
+
+        /* var jugador1 = new jugador('Carlos', 'Huhu', 'Médico', 6, 800);
+        var jugador2 = new jugador("Ben", "Ten", "Zombie", 26, 7779); */
+
+
+        let jugadores = [jugador1, jugador2];
+
+        jugador1.toString = function mostrarJugador(jugador){
+            var datos = "Nombre: " + jugador.nombre + "\nApellido: " + jugador.apellido + "\nEmpleo: " + jugador.empleo + "\nNivel: " + jugador.nivel + "\nPuntuación: " + jugador.puntuacion;
+            return datos;
+        }
+        jugador2.toString = function mostrarJugador(jugador){
+            var datos = "Nombre: " + jugador.nombre + "\nApellido: " + jugador.apellido + "\nEmpleo: " + jugador.empleo + "\nNivel: " + jugador.nivel + "\nPuntuación: " + jugador.puntuacion;
+            return datos;
+        }
+
+        resetearPuntuacion = function(jugador) {jugador.puntuacion = 0};
+
+        //Inicio
+        console.log(jugador1.toString(jugador1));
+        console.log(jugador2.toString(jugador2));
+        resetearPuntuacion(jugador2);
+        console.log(jugador2.toString(jugador2));
+
+
+
+    </script>
+
+
+</body>
+</html>

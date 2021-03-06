@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nombre = prompt("Introduzca el nombre: ");
+        compNom = /[^A-Z]/;
+        if(compNom.test(nombre)==false){
+            console.log("Error, El nombre debe empezar por una letra mayúcula.");
+        }
+        apellidos = prompt("Intruduce los apellidos: ");
+        compAp = /[A-Za-z]\s[A-Za-z]/;
+        if(compAp.test(apellidos)==false){
+            console.log("Error, el apellido deben ser dos palabras");
+        }
+        email = prompt("Introduzca el email: ");
+        compEm = /[^a-z]\d+[.][a-z+]\d+[@][a-z+]\d+[.][a-z+]\d+/i;
+        if(compEm.test(email)==false){
+            console.log("Error, en el mail");
+        }
+        password = prompt("introduzca una contraseña: ");
+        compPass = /[a-z+0-9+A-Z+]{8}/i;
+        if(compPass.test(password)==false){
+            console.log("Error, la contraseña no cumple los requisitos necesarios");
+        }
+    </script>
+    
+</body>
+</html>

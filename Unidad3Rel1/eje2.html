@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        let dia = prompt("Introduzca el dia: ", 19);
+        let mes = prompt("Introduzca el mes: ", 10);
+        let anio = prompt("Introduzca el anio: ", 2001);
+
+        let dia1 = prompt("Introduzca el otro dia: ", 1);
+        let mes1 = prompt("Introduzca el otro mes: ", 10);
+        let anio1 = prompt("Introduzca el otro anio: ", 2001);
+
+        var date1 = new Date(anio+"-"+mes+"-"+dia);
+        var date2 = new Date(anio1+"-"+mes1+"-"+dia1);
+
+        var MilesimaDia = 86400000;
+        var dif = date2-date1;
+        var difday = dif/MilesimaDia;
+        if(difday<=0){
+            difday = difday*-1;
+        }
+        console.log(Math.round(difday));
+
+    </script>
+
+
+</body>
+</html>

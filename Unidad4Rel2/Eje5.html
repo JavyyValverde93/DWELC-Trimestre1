@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 js</title>
+</head>
+<body>
+    <script>
+        var pilots = [
+            {
+                id: 2,
+                name: "Wedge Antilles",
+                faction: "Rebels",
+            },
+            {
+                id: 8,
+                name: "Ciena Ree",
+                faction: "Empire",
+            },
+            {
+                id: 40,
+                name: "Iden Versio",
+                faction: "Empire",
+            },
+            {
+                id: 66,
+                name: "Thane Kyrell",
+                faction: "Rebels",
+            }
+        ];
+
+        //Pilotos rebeldes 
+        var pilotes = "Pilotos rebeldes: ";
+
+        pilots.filter(function(pilo){
+            if(pilo.faction === "Rebels"){
+                pilotes = pilotes + pilo.name + ", ";
+            };
+        })
+
+        console.log(pilotes);
+
+        //Pilotos rebeldes con arrow =>
+        pilotes = "Pilotos Rebeldes: ";
+
+        gg = pilots.filter(pilo=>pilo.faction === "Rebels").map(piloh => piloh.name);
+
+        console.log(pilotes + gg);
+
+
+    </script>
+</body>
+</html>

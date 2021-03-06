@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Documento</title>
+</head>
+
+<body>
+	<p id="demo" onclick="miFuncion()">Hazme Click</p>
+    <p id="eje2" onclick="Ejercicio2('www.google.es')">Ejercicio2</p>
+    <p id="eje3" onclick="Ejercicio3()">Ejercicio3</p>
+    <p id="eje4" onclick="Ejercicio4()">Ejercicio4</p>
+    <p id="eje4i" onclick="Ejercicio4Inicial()">Ejercicio 4-inicial</p>
+
+
+	<script>
+    	function miFuncion() {
+            document.getElementById("demo").innerHTML = "¡ME HAS HECHO CLICK!";
+            
+        }
+        
+		var ventana = "";
+        function Ejercicio2(url){
+            ventana = window.open("https://www.amazon.es/?tag=operadesktop14-sd-es-21", "nuevo", "directories=no, location=no, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
+        }
+
+		function Ejercicio3(){
+			if(ventana.closed){
+				console.log("La ventana esta cerrada");
+			}else{
+				console.log("La ventana ahora esta cerrada");
+				ventana.close;
+			}
+		}
+
+		var movision = "";
+		var ventana2 = "";
+
+		function Ejercicio4(){
+			if(ventana.closed){
+				//console.log("La ventana esta cerrada");
+			}else{
+				ventana.close;
+				ventana = window.open("amason.html", "nuevo", "directories=no, location=no, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
+				ventana2 = ventana;
+				movision = setInterval( function(){
+					ventana.moveBy(50,50);
+				}, 2000);
+			}
+		}
+
+		function Ejercicio4Inicial(){
+			movision.break;
+			clearInterval(movision);	
+			ventana.close();			
+			ventana = window.open("amason.html", "nuevo", "directories=no, location=yes, resizable=no, tittlebar=yes, top=20, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400, left=10");
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+
+    <script>        
+        class Persona{
+            constructor(nombre, apellido, edad){
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+
+            }
+
+            toString(){
+                let mensaje = "Nombre: " + this.nombre + " Apellido: " + this.apellido + " Edad: " + this.edad;
+                return mensaje;
+            }
+
+        }
+
+        class Medico extends Persona{
+            constructor(nombre, apellido, edad, especialidad, aniosExper){
+                super(nombre, apellido, edad);
+                this._especialidad = especialidad;
+                this._aniosExper = aniosExper;
+            }
+
+            toString(){
+                let mensaje = super.toString() + " Especialidad: " + this.especialidad + " Experiencia: " + this.aniosExper;
+                return mensaje;
+            }
+            //GETTERS
+            get especialidad(){
+                return this._especialidad;
+            }
+
+            get aniosExper(){
+                return this._aniosExper;
+            }
+            //SETTERS
+            set especialidad(especialidad){
+                this._especialidad = especialidad;
+            }
+
+            set aniosExper(aniosExper){
+                this._aniosExper = aniosExper;
+            }
+        }
+
+        Medicos = [];
+
+        Medico1 = new Medico("Juan", "Martinez", 26, "cardiología", 1);
+        Medicos.push(Medico1);
+
+        Medico2 = new Medico("Ana", "Larra", 32, "infantil", 14);
+        Medicos.push(Medico2);
+
+        Medico3 = new Medico("Fran", "Sanchez", 26, "infantil", 7);
+        Medicos.push(Medico3);
+
+        //SUMAR AÑOS MEDICOS INFANTIL
+        let Experiencias = Medicos.filter(expe => expe.especialidad == "infantil").map(a => a.aniosExper).reduce((acum, act) => acum + act, 0);
+
+        let MenosAnios = null;
+        let medicoMenosExperimentado = null;
+        //MENOS EXPERIMENTADO
+        let MenosExp = Medicos.map(function (a){
+            if(MenosAnios==null){
+                MenosAnios = a.aniosExper;
+                medicoMenosExperimentado = "" + a.nombre + " " + a.apellido;
+            }
+            if(a.aniosExper<=MenosAnios){
+                MenosAnios = a.aniosExper;
+                medicoMenosExperimentado = "" + a.nombre + " " + a.apellido;
+            }
+        });
+
+        // mayorFecha(["2015/02/01","2015/02/01","2015/01/03"]);
+        // let arrayFechas = mayorFecha.map((fechaActual) => new Date(fechaActual) );
+
+        // var max = new Date(Math.max.apply(null,arrayFechas));
+        // var min = new Date(Math.min.apply(null,arrayFechas));
+
+        // console.log("Fecha menor" , min) 
+        
+        
+        // fecha = new Date("2015/02/01");
+        // console.log(fecha);
+
+        console.log("Años de experiencia en infantil: "+ Experiencias);
+        console.log("Médico menos experimentado: " + medicoMenosExperimentado + " con " + MenosAnios + " años de experiencia");
+        console.log(Medico1.toString());
+        console.log(Medico1);
+
+    </script>
+
+</body>
+</html>

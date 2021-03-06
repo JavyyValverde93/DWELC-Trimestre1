@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DWELC</title>
+</head>
+<body>
+    <script>        
+        let dia1 = prompt("Introduzca su dia de nacimiento: ");
+        let mes1 = prompt("Introduzca su mes de nacimiento: ");
+        let anio1 = prompt("Introduzca su anio de nacimiento: ");
+
+        var hoy = new Date();
+        var anio = hoy.getFullYear();
+        var mes = hoy.getMonth();
+        var dia = hoy.getDay();
+
+        var edad = anio - anio1;
+        if(mes>mes1){
+            edad = edad + 1;
+        }
+        if(mes==mes1){
+            if(dia1>=dia){
+                edad = edad + 1;
+            }
+        }
+        console.log(edad + " años");
+
+    </script>
+
+
+</body>
+</html>

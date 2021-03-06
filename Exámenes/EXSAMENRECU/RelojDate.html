@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function hora(){
+            fecha = new Date();
+            //fecha.setHours(5);
+            hora = fecha.getHours();
+
+            info = " INFO = ";
+
+            if(hora>=12 && hora<=14){
+                info += "Es mediodía";
+            }
+            if(hora>=15 && hora<=20){
+                info += "Estamos en la tarde";
+            }
+            if(hora>=21 || hora<=6){
+                info += "Es de noche";
+            }
+            if(hora>=7 && hora<=11){
+                info += "Es mañana";
+            }
+
+            console.clear();
+            console.log(fecha.toLocaleString() + " --" + info);
+        }
+
+        setInterval(hora, 1000);
+        
+
+
+
+
+    </script>
+</body>
+</html>

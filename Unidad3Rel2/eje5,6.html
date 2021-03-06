@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Documento</title>
+</head>
+
+<body>
+    
+    <p id="eje5" onclick="Ejercicio5()">Ejercicio 5A</p>
+    <p id="eje5b" onclick="Ejercicio5b()">Ejercicio 5B</p>
+    <p id="eje6" onclick="Ejercicio6()">Ejercicio 6A</p>
+    <p id="eje6b" onclick="Ejercicio6b()">Ejercicio 6B</p>
+
+
+	<script>
+
+		function Ejercicio5(){
+			var aleat = Math.random()*(1000 - 0) + 0;
+			ventana = window.open("amason.html", "nuevo", "directories=no, location=yes, resizable=no, tittlebar=yes, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
+			ventana.moveTo((Math.floor(Math.random()*(screen.width - 1) + 1)), (Math.floor(Math.random()*(screen.height - 1) + 1)));
+		}
+
+		function Ejercicio5b(){
+			ventana = window.open("amason.html", "nuevo", "directories=no, location=yes, resizable=no, tittlebar=yes, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
+			let width = null;
+			let height = null;
+			ventana.onload = inicioPrograma; //Si la ventana esta completamente cargada ejecuta la funcion
+			function inicioPrograma(){
+				cogermedidas();
+				empezarIntervalo();
+			}
+
+			var crese = 0;
+
+			function empezarIntervalo(){
+				var BucleCrecimiento = setInterval(() => {
+					if(height==0){
+						clearTimeout(BucleCrecimiento);
+					}
+					if(width<=340 || crese==1){						
+						if(width>=560){
+							crese = -1;
+						}else{
+							ventana.resizeBy(+40, +40);
+						}
+						if(width<=300){
+							crese = +1;
+						}
+					}else{
+						ventana.resizeBy(-40, -40);		
+					}
+					//setTimeout( cogermedidas, 500); //Esperar medio segundo antes de pedir medidas pq no tuvo tiempo de cargar todos los valores
+					cogermedidas();					
+				}, 1000);
+			}
+			function cogermedidas(){
+					width = ventana.innerWidth
+					|| ventana.document.documentElement.clientWidth
+					|| ventana.document.body.clientWidth;
+
+					height = ventana.innerHeight
+					|| ventana.document.documentElement.clientHeight
+					|| ventana.document.body.clientHeight;
+				}
+		}
+
+		function Ejercicio6(){
+			var desde = 3;
+			var hasta = 11;
+			console.log('Ejercicio 6A:');
+			var eje6 = setInterval(function(){ 
+				if(desde==hasta){
+					console.log(desde);
+					clearInterval(eje6);
+				}else{
+					console.log(desde); 
+				}
+				desde = desde + 1;
+			}, 1000);
+		}
+
+		function Ejercicio6b(){
+			var desde = 3;
+			var hasta = 11;
+			console.log('Ejercicio 6B:');
+				eje6b();
+				function eje6b(){
+					setTimeout(function(){ 
+					console.log(desde); 
+					desde = desde + 1;
+					if(desde!=hasta + 1){
+						eje6b();
+					}
+				}, 1000);
+			}
+		}
+
+	</script>
+</body>
+</html>
